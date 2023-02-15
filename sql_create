@@ -1,0 +1,30 @@
+-- Table: public.async_t
+
+-- DROP TABLE IF EXISTS public.async_t;
+
+CREATE TABLE IF NOT EXISTS public.async_t
+(
+    id integer NOT NULL DEFAULT 'nextval('async_t_id_seq'::regclass)',
+    name character varying COLLATE pg_catalog."default" NOT NULL,
+    birth_year character varying COLLATE pg_catalog."default" NOT NULL,
+    created timestamp without time zone DEFAULT 'now()',
+    edited timestamp without time zone DEFAULT 'now()',
+    eye_color character varying COLLATE pg_catalog."default",
+    films character varying COLLATE pg_catalog."default",
+    gender character varying COLLATE pg_catalog."default",
+    hair_color character varying COLLATE pg_catalog."default",
+    height character varying COLLATE pg_catalog."default",
+    homeworld character varying COLLATE pg_catalog."default",
+    mass character varying COLLATE pg_catalog."default",
+    skin_color character varying COLLATE pg_catalog."default",
+    species character varying COLLATE pg_catalog."default",
+    starships character varying COLLATE pg_catalog."default",
+    vehicles character varying COLLATE pg_catalog."default",
+    url character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT async_t_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.async_t
+    OWNER to ekaterina;

@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-PG_DSN = 'postgresql+asyncpg://ekaterina:1234@127.0.0.1:5430/async'
+PG_DSN = 'postgresql+asyncpg://ekaterina:1234@127.0.0.1:5432/async'
 
 engine = create_async_engine(PG_DSN)
 Session = sessionmaker(bind=engine, class_=AsyncSession, expire_on_commit=False)
@@ -24,9 +24,9 @@ class SwapiPeople(Base):
     films = Column(String)
     gender = Column(String)
     hair_color = Column(String)
-    height = Column(Integer)
+    height = Column(String)
     homeworld = Column(String)
-    mass = Column(Integer)
+    mass = Column(String)
     skin_color = Column(String)
     species = Column(String)
     starships = Column(String)
